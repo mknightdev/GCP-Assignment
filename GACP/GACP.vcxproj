@@ -86,13 +86,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SDL2_MAIN_HANDLED</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include;..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DSDL_MAIN_HANDLED %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>myengine.lib;myrenderer.lib;glew32.lib;SDL2.lib;OpenAL32.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Debug;../contrib/msvc-windows-x86/glew/lib;../contrib/msvc-windows-x86/SDL2/lib;../contrib/msvc-windows-x86/OpenAL/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -101,28 +104,34 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SDL2_MAIN_HANDLED</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include;..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DSDL_MAIN_HANDLED %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>myengine.lib;myrenderer.lib;glew32.lib;SDL2.lib;OpenAL32.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Release;../contrib/msvc-windows-x86/glew/lib;../contrib/msvc-windows-x86/SDL2/lib;../contrib/msvc-windows-x86/OpenAL/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SDL2_MAIN_HANDLED</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include;..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DSDL_MAIN_HANDLED %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>myengine.lib;myrenderer.lib;glew32.lib;SDL2.lib;OpenAL32.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Debug;../contrib/msvc-windows-x86/glew/lib;../contrib/msvc-windows-x86/SDL2/lib;../contrib/msvc-windows-x86/OpenAL/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -131,15 +140,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);SDL2_MAIN_HANDLED</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../contrib;../contrib/msvc-windows-x86/SDL2/include;../contrib/msvc-windows-x86/OpenAL/include;../contrib/msvc-windows-x86/glew/include;..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/DSDL_MAIN_HANDLED %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>myengine.lib;myrenderer.lib;glew32.lib;SDL2.lib;OpenAL32.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Release;../contrib/msvc-windows-x86/glew/lib;../contrib/msvc-windows-x86/SDL2/lib;../contrib/msvc-windows-x86/OpenAL/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

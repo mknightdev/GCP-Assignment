@@ -2,6 +2,9 @@
 #include <vector>
 #include <string>
 
+// TODO
+#include "Resource.h"
+
 namespace myengine
 {
 	struct Core;
