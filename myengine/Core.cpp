@@ -44,6 +44,8 @@ namespace myengine
 		}
 
 		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 	}
 
 	/**
@@ -143,21 +145,16 @@ namespace myengine
 				else if (event.type == SDL_KEYDOWN)
 				{
 					keyboard->keyCodes.push_back(event.key.keysym.sym);
+
+					if (event.key.keysym.sym == SDLK_ESCAPE)
+					{
+						running = false;
+					}
 				}
 				else if (event.type == SDL_KEYUP)
 				{
 					keyboard->removeKey(event.key.keysym.sym);
 				}
-				
-				//switch (event.key.keysym.sym)
-				//{
-				//	case SDLK_ESCAPE: 
-				//		std::cout << "Quit program with ESC!" << std::endl;
-				//		running = false;
-				//		SDL_DestroyWindow(window);
-				//		SDL_Quit();
-				//		break;
-				//}
 			}
 
 			environment->tick();
@@ -168,7 +165,17 @@ namespace myengine
 				entities.at(ei)->tick(environment->getDeltaTime());
 			}
 
-			glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
+			// If entities are flagged to destroy, remove them
+			for (size_t ei = 0; ei < entities.size(); ++ei)
+			{
+				if (entities.at(ei)->destroy == true)
+				{
+					entities.erase(entities.begin() + ei);
+					ei--;	// Prevents skipping one that's shuffled to its place
+				}
+			}
+
+			glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
@@ -205,6 +212,28 @@ namespace myengine
 
 		// Stop the engine
 		running = false;
+	}
+
+	/**
+	*  \brief Resets all entities.
+	*
+	*  Resets all entities, deleting them so the new screen can create new ones without
+	*  seeing the old still on screen.
+	*
+	*  \see MenuScreen
+	*  \see PBRScreen
+	*/
+	void Core::clear()
+	{
+		for (int i = 0; i < entities.size(); i++)
+		{
+			//entities.at(i).reset();
+			entities.at(i)->destroy = true;
+		}
+
+		//entities.clear();
+
+		//entities.at(i)->destroy = true
 	}
 
 	/**

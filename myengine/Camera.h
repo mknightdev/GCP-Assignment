@@ -1,6 +1,6 @@
 #include "Component.h"
 
-#include "mymath.h"
+#include <myengine/mymath.h>
 
 namespace myengine
 {

@@ -1,6 +1,5 @@
 #include "ResourceManager.h"
 #include "Core.h"
-#include "Resource.h"
 
 #include <memory>
 
@@ -19,10 +18,5 @@ namespace myengine
 		rtn->self = rtn;
 		rtn->core = _core;
 		return rtn;
-	}
-
-	ResourceManager::~ResourceManager()
-	{
-
 	}
 }

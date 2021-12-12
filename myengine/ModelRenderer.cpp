@@ -8,6 +8,8 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
+#include "stb_image.h"
+
 using namespace myrenderer;
 
 // TODO: move into own class
@@ -63,7 +65,7 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
 		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
-		shader->CreateShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
+		shader->CreateShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
 
 		shader->use();
 		shader->setInt("albedoMap", 0);
@@ -72,7 +74,6 @@ namespace myengine
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
 		shader->setInt("emissiveMap", 5);
-
 
 		//shader->setInt("material.diffuse", 0);
 		//shader->setInt("diffuse", 0);

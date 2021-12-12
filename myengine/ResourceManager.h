@@ -2,9 +2,6 @@
 #include <vector>
 #include <string>
 
-// TODO
-#include "Resource.h"
-
 namespace myengine
 {
 	struct Core;
@@ -13,7 +10,6 @@ namespace myengine
 	struct ResourceManager
 	{
 		static std::shared_ptr<ResourceManager> create(std::weak_ptr<Core> _core);
-		~ResourceManager();
 
 		/**
 		* \brief Loads a resource.
@@ -66,6 +62,6 @@ namespace myengine
 		* Each time a new resource is loaded, it gets cached to here to be loaded from,
 		* rather than creating a new one each time.
 		*/
-		std::vector<std::shared_ptr<Resource> > resources;
+		std::vector<std::shared_ptr<Resource>> resources;
 	};
 }
