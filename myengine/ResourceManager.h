@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+#include "Resource.h" // Fix for standalone project
+
 namespace myengine
 {
 	struct Core;
