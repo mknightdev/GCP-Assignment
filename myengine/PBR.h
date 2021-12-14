@@ -10,7 +10,6 @@ namespace myengine
 
 	struct PBR : Component
 	{
-		void onAwake();
 		void onInitialize();
 		void onDisplay();
 		void onTick(float _deltaTime);
@@ -42,12 +41,6 @@ namespace myengine
 		* \attention This one is used for the model.
 		*/
 		std::shared_ptr<myrenderer::ShaderProgram> shader;
-
-		std::shared_ptr<myrenderer::ShaderProgram> cubemapShader;
-		std::shared_ptr<myrenderer::ShaderProgram> backgroundShader;
-		std::shared_ptr<myrenderer::ShaderProgram> irradianceShader;
-		std::shared_ptr<myrenderer::ShaderProgram> prefilterShader;
-		std::shared_ptr<myrenderer::ShaderProgram> brdfShader;
 
 		/**
 		* \brief Shader to create and use.
@@ -89,18 +82,6 @@ namespace myengine
 		* \see TriangleRenderer
 		*/
 		std::shared_ptr<myrenderer::VertexBuffer> texturesVbo;
-
-		/**
-		* \brief The model's texture
-		*
-		* Stores texture and gets used to bind with the VAO when drawing it.
-		*/
-		std::shared_ptr<myrenderer::Texture> albedoMap;
-		std::shared_ptr<myrenderer::Texture> normalMap;
-		std::shared_ptr<myrenderer::Texture> metallicMap;
-		std::shared_ptr<myrenderer::Texture> roughnessMap;
-		std::shared_ptr<myrenderer::Texture> aoMap;
-		std::shared_ptr<myrenderer::Texture> emissiveMap;
 
 		vec3 pointLightPositions[4] = {
 			vec3(-2.5f,  2.5f,  2.5f),
