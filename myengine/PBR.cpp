@@ -167,6 +167,7 @@ namespace myengine
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "projection"), 1, GL_FALSE, value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "view"), 1, GL_FALSE, value_ptr(view));
 
+		// Update the light positions of each light cube in the scene, and update their colours too
 		for (unsigned int i = 0; i < 4; i++)
 		{
 			mat4 lightModel = mat4(1.0f);
