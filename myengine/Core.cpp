@@ -44,8 +44,10 @@ namespace myengine
 		}
 
 		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
-		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
-		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+		
+		// To use when using RenderDoc:
+		//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+		//SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 	}
 
 	/**
@@ -139,8 +141,6 @@ namespace myengine
 				{
 					// Keep track of mouse position
 					mouse->mousePosition = glm::vec2(event.motion.x, event.motion.y);
-
-					//std::cout << "Mouse = (" << mouse->mousePosition.x << ", " << mouse->mousePosition.y << ")" << std::endl;
 				}
 				else if (event.type == SDL_KEYDOWN)
 				{

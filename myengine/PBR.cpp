@@ -265,13 +265,6 @@ namespace myengine
 		}
 
 		mouseUpdate();
-
-		// TODO:
-		/*
-			1) Get camera
-				a) Go through entity
-			2) Set new positions of camera after moving it
-		*/
 	}
 
 	/**

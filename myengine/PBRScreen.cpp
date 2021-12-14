@@ -111,8 +111,6 @@ namespace myengine
 
 	void PBRScreen::onTick(float _deltaTime)
 	{
-		//std::cout << "PBRScreen TICK" << std::endl;
-
 		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
 		{
 			std::cout << "Press LEFT ARROW to return to previous screen" << std::endl;
@@ -120,6 +118,7 @@ namespace myengine
 			// Clear the entiies ready for new screen
 			getCore()->clear();
 
+			// Swap to the next scene
 			std::shared_ptr<Entity> pbrEntity2 = getCore()->addEntity();
 			std::shared_ptr<PBR2Screen> pbrScreen2 = pbrEntity2->addComponent<PBR2Screen>();
 		}
