@@ -95,7 +95,7 @@ namespace myengine
 		lightVao->setBuffer(0, positionsVbo);
 
 		lightShader = std::make_shared<myrenderer::ShaderProgram>();
-		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
+		lightShader->CreateShader("resources/shaders/lightCubeVert.txt", "resources/shaders/lightCubeFrag.txt");
 	}
 
 	/**

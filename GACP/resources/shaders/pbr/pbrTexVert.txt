@@ -1,0 +1,27 @@
+// The following code is based, and with some modifications, from :- 
+// Joey de Vries (2020). Learn OpenGL [online]. [Accessed 6th November 2021].
+// Available from: <https://learnopengl.com/PBR/Lighting>.
+
+#version 410
+
+in vec3 a_Position;
+in vec2 a_TexCoord;
+in vec3 a_Normal;	
+
+out vec3 v_WorldPos;	
+out vec2 v_TexCoord;
+out vec3 v_Normal;		
+
+uniform mat4 model;														 
+uniform mat4 view;			
+uniform mat4 projection;
+																					 
+void main()																 
+{																			 
+	v_WorldPos = vec3(model * vec4(a_Position, 1.0));						 
+	v_TexCoord = a_TexCoord;	 
+	v_Normal = mat3(transpose(inverse(model))) * a_Normal;
+	
+	gl_Position = projection * view * model * vec4(a_Position, 1.0);
+}																			 
+	

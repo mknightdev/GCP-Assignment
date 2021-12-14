@@ -1,0 +1,14 @@
+// The following code is based, and with some modifications, from :- 
+// Joey de Vries (2020). Learn OpenGL [online]. [Accessed 6th November 2021].
+// Available from: <https://learnopengl.com/Lighting/Multiple-lights>.
+
+#version 410
+out vec4 FragColor;
+
+uniform vec3 lightCubeColour;
+
+void main()
+{
+	// Set the colour of the light to whatever is passed through within the onDisplay function
+	FragColor = vec4(lightCubeColour, 1.0);
+}
