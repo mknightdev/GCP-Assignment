@@ -1,3 +1,10 @@
+// The following code is based, and with some modifications, from :- 
+// Joey de Vries (2020). Learn OpenGL [online]. [Accessed 6th November 2021].
+// Available from: <https://learnopengl.com/PBR/Lighting>.
+//
+// Joey de Vries (2020). Learn OpenGL [online]. [Accessed 15 December 2021].
+// Available from: <https://learnopengl.com/Lighting/Multiple-lights>.
+
 #include "PBR.h"
 #include "Transform.h"
 #include "Mouse.h"
@@ -47,7 +54,8 @@ namespace myengine
 		*
 		******************************/
 
-		// Vertex Buffer
+		// Vertex Buffer for light cube
+		// Positions for the light cube
 		positionsVbo = std::make_shared<myrenderer::VertexBuffer>();
 		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
 		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));

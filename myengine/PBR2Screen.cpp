@@ -15,6 +15,14 @@
 
 namespace myengine
 {
+
+	/**
+	* \brief Initialises the scene.
+	*
+	* Loads the model, sets the properties of the model, sets the position and sets the shader.
+	*
+	* \see PBR
+	*/
 	void PBR2Screen::onInitialize()
 	{
 		// Load icons and models
@@ -109,6 +117,14 @@ namespace myengine
 		pbr6->getTransform()->setPosition(vec3(-2, 2, -2.5f));
 	}
 
+
+	/**
+	* \brief Detects input
+	*
+	* Detects input each frame and then does something. In this case, it swaps to the second scene.
+	*
+	* \see PBRScreen
+	*/
 	void PBR2Screen::onTick(float _deltaTime)
 	{
 		//std::cout << "PBRScreen TICK" << std::endl;

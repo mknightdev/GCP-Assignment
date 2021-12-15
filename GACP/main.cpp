@@ -1,5 +1,3 @@
-//#include "Enemy.h"
-
 #include <myengine/myengine.h>
 #include <myrenderer/myrenderer.h>
 
